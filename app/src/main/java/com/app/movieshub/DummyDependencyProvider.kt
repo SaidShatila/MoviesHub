@@ -20,7 +20,6 @@ object DummyDependencyProvider {
                     ignoreUnknownKeys = true
                 }.asConverterFactory("application/json".toMediaType())
             )
-
             .build()
             .create(MovieService::class.java)
     val movieRepository: MovieRepository = MovieRepository(movieService)

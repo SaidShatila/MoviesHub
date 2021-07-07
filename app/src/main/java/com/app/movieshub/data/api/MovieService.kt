@@ -1,9 +1,11 @@
 package com.app.movieshub.data.api
 
 import com.app.movieshub.data.entities.Movie
+import com.app.movieshub.data.entities.Movies
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface MovieService {
     //https://api.themoviedb.org/3/movie/popular?api_key=d91092f4e07cdcd7c5860125d2b04f81
@@ -13,7 +15,7 @@ interface MovieService {
     @GET("movie/{movie_id}")
    suspend fun getMovieDetails(@Path("movie_id") id: String): Response<Movie>
 
-//    @GET("movie/popular")
-//    fun getMovies()
+    @GET("movie/popular")
+    fun getMovies(@Query("page")page: Int): Response<Movies>
 
 }
