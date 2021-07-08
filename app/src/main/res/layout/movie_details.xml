@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
         <variable
             name="viewModel"
             type="com.app.movieshub.movie.MovieDetailsViewModel" />
+
     </data>
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-<TextView
-    android:text="@{viewModel.movieName}"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
+
+        <include
+            layout="@layout/movie_details_content"
+            android:visibility="@{viewModel.contentVisibility}"
+            app:viewModel="@{viewModel.contentViewModel}" />
+
+        <include
+            layout="@layout/movie_details_error"
+            android:visibility="@{viewModel.errorVisibility}"
+            app:viewModel="@{viewModel.errorViewModel}" />
     </FrameLayout>
 </layout>

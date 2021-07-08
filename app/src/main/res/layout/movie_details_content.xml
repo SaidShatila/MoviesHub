@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.app.movieshub.movie.StateViewModel.Content" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:background="@color/black">
+
+
+            <ImageView
+                android:id="@+id/moviePoster"
+                android:layout_width="wrap_content"
+                android:layout_height="400dp"
+                android:src="@{viewModel.movie.posterPath}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/movieTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="movie"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/moviePoster" />
+
+            <TextView
+                android:id="@+id/movieTitleViewModel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:text="@{viewModel.movie.title}"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/movieTitle"
+                app:layout_constraintStart_toEndOf="@id/movieTitle"
+                app:layout_constraintTop_toTopOf="@id/movieTitle" />
+
+            <TextView
+                android:id="@+id/movieTagline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="sub title"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/movieTitleViewModel" />
+
+            <TextView
+                android:id="@+id/movieTagLineViewModel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:text="@{viewModel.movie.tagline}"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/movieTagline"
+                app:layout_constraintStart_toEndOf="@id/movieTagline"
+                app:layout_constraintTop_toTopOf="@id/movieTagline" />
+
+            <TextView
+                android:id="@+id/movieInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Movie Info"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/movieTagLineViewModel" />
+
+            <TextView
+                android:id="@+id/movieStatusViewModel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:text="@{viewModel.movie.status}"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/movieInfo"
+                app:layout_constraintStart_toEndOf="@id/movieInfo"
+                app:layout_constraintTop_toTopOf="@id/movieInfo" />
+
+
+            <TextView
+                android:id="@+id/releaseDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="ReleaseDate: "
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/movieStatusViewModel" />
+
+            <TextView
+                android:id="@+id/movieReleaseDateViewModel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:text="@{viewModel.releaseDateString}"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/releaseDate"
+                app:layout_constraintStart_toEndOf="@id/releaseDate"
+                app:layout_constraintTop_toTopOf="@id/releaseDate" />
+
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Rating: "
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/movieReleaseDateViewModel" />
+
+            <TextView
+                android:id="@+id/movieRatingViewModel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:rating="@{viewModel.ratingString}"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/rating"
+                app:layout_constraintStart_toEndOf="@id/rating"
+                app:layout_constraintTop_toTopOf="@id/rating" />
+
+            <TextView
+                android:id="@+id/runTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Runtime: "
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/movieRatingViewModel" />
+
+            <TextView
+                android:id="@+id/movieRunTimeViewModel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:text="@{viewModel.runtimeString}"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/runTime"
+                app:layout_constraintStart_toEndOf="@id/runTime"
+                app:layout_constraintTop_toTopOf="@id/runTime" />
+
+
+            <TextView
+                android:id="@+id/budget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Budget: "
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/movieRunTimeViewModel" />
+
+            <TextView
+                android:id="@+id/movieBudgetViewModel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:text="@{viewModel.budgetString}"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/budget"
+                app:layout_constraintStart_toEndOf="@id/budget"
+                app:layout_constraintTop_toTopOf="@id/budget" />
+
+
+            <TextView
+                android:id="@+id/revenue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Revenue: "
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/movieBudgetViewModel" />
+
+            <TextView
+                android:id="@+id/movieRevenueViewModel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:text="@{viewModel.revenueString}"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/revenue"
+                app:layout_constraintStart_toEndOf="@id/revenue"
+                app:layout_constraintTop_toTopOf="@id/revenue" />
+
+
+            <TextView
+                android:id="@+id/overView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Overview "
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/movieRevenueViewModel" />
+
+            <TextView
+                android:id="@+id/movieOverViewViewModel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:text="@{viewModel.movie.overview}"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/overView"
+                app:layout_constraintStart_toEndOf="@id/overView"
+                app:layout_constraintTop_toTopOf="@id/overView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

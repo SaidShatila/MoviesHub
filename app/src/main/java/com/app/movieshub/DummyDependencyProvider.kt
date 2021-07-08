@@ -12,16 +12,14 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 
 object DummyDependencyProvider {
-    val httpClient: OkHttpClient = OkHttpClient.Builder().addInterceptor(requestInterceptor).build()
-    val movieService: MovieService =
-        Retrofit.Builder().client(httpClient).baseUrl(BASE_URL)
-            .addConverterFactory(
-                Json {
-                    ignoreUnknownKeys = true
-                }.asConverterFactory("application/json".toMediaType())
-            )
-
-            .build()
-            .create(MovieService::class.java)
+  private  val httpClient: OkHttpClient = OkHttpClient.Builder().addInterceptor(requestInterceptor).build()
+   private val retrofit = Retrofit.Builder().client(httpClient).baseUrl(BASE_URL)
+        .addConverterFactory(
+            Json {
+                ignoreUnknownKeys = true
+            }.asConverterFactory("application/json".toMediaType())
+        )
+        .build()
+    val movieService: MovieService = retrofit.create(MovieService::class.java)
     val movieRepository: MovieRepository = MovieRepository(movieService)
 }
