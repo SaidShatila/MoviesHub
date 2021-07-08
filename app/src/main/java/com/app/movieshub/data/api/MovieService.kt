@@ -1,7 +1,7 @@
 package com.app.movieshub.data.api
 
 import com.app.movieshub.data.entities.Movie
-import com.app.movieshub.data.entities.Movies
+import com.app.movieshub.data.entities.MoviesResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -16,6 +16,6 @@ interface MovieService {
    suspend fun getMovieDetails(@Path("movie_id") id: String): Response<Movie>
 
     @GET("movie/popular")
-    fun getMovies(@Query("page")page: Int): Response<Movies>
+    fun getMovies(@Query("page")page: Int): Response<MoviesResponse>
 
 }

@@ -7,9 +7,9 @@ import java.util.*
 
 @Serializable
 data class Movie(
+    @SerialName("budget") val budget: Int,
     @SerialName("id") val id: Int,
     @SerialName("overview") val overview: String,
-    @SerialName("popularity") val popularity: Double,
     @SerialName("poster_path") val posterPath: String,
     @SerialName("release_date") @Serializable(DateSerializer::class) val releaseDate: Date,
     @SerialName("revenue") val revenue: Int,
