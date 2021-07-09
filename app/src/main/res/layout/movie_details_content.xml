@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.app.movieshub.movie.StateViewModel.Content" />
+            type="com.app.movieshub.movie.MovieDetailsStateViewModel.Content" />
     </data>
 
     <ScrollView
@@ -24,10 +24,10 @@
                 android:id="@+id/moviePoster"
                 android:layout_width="wrap_content"
                 android:layout_height="400dp"
-                android:src="@{viewModel.movie.posterPath}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:loadImage="@{viewModel.moviePosterPath}" />
 
             <TextView
                 android:id="@+id/movieTitle"
@@ -42,7 +42,7 @@
                 app:layout_constraintTop_toBottomOf="@id/moviePoster" />
 
             <TextView
-                android:id="@+id/movieTitleViewModel"
+                android:id="@+id/movieTitleData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="4dp"
@@ -62,7 +62,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/movieTitleViewModel" />
+                app:layout_constraintTop_toBottomOf="@id/movieTitleData" />
 
             <TextView
                 android:id="@+id/movieTagLineViewModel"
@@ -139,7 +139,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="4dp"
-                android:rating="@{viewModel.ratingString}"
+                android:text="@{viewModel.ratingString}"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="@id/rating"
                 app:layout_constraintStart_toEndOf="@id/rating"
