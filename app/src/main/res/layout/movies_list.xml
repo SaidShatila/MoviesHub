@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.app.movieshub.movies.MoviesListViewModel" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout="@layout/movies_list_content"
+            android:visibility="@{viewModel.contentVisibility}"
+            app:viewModel="@{viewModel.contentViewModel}" />
+
+        <include
+            layout="@layout/error_state"
+            android:visibility="@{viewModel.errorVisibility}"
+            app:viewModel="@{viewModel.errorViewModel}" />
+    </FrameLayout>
+</layout>
