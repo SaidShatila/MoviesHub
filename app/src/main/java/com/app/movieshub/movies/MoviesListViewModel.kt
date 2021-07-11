@@ -9,6 +9,7 @@ import com.app.movieshub.data.api.MovieRepository
 import com.app.movieshub.data.entities.CompactMovie
 import com.app.movieshub.data.entities.MoviesResponse
 import com.app.movieshub.utils.MoviesListAdapter
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlin.properties.Delegates
 
@@ -42,7 +43,7 @@ data class MoviesListViewModel(
     }
 
     init {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             state = MoviesListStateViewModel.Loading
             val result: Result<MoviesResponse?> = movieRepository.fetchMovies(page = 1)
             if (result.isSuccess) {
