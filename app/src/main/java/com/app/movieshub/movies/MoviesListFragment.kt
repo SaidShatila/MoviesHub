@@ -25,6 +25,7 @@ class MoviesListFragment : Fragment() {
 
 
                 requireActivity().supportFragmentManager.commit {
+                    addToBackStack("MovieDetailsFragment")
                     replace(
                         R.id.fragmentContainer,
                         MovieDetailsFragment.createInstance(movie.id.toString())

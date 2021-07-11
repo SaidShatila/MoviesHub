@@ -24,7 +24,7 @@ data class MoviesListViewModel(
     val contentViewModel = ObservableField<MoviesListStateViewModel.Content>()
     val errorViewModel = ObservableField<MoviesListStateViewModel.Error>()
 
-    private var state: MoviesListStateViewModel by Delegates.observable(MoviesListStateViewModel.Loading) { _, oldValue, newValue ->
+    private var state: Any by Delegates.observable(MoviesListStateViewModel.Loading) { _, oldValue, newValue ->
         when (newValue) {
 
             is MoviesListStateViewModel.Content -> {
