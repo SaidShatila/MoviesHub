@@ -21,6 +21,7 @@
 
         <include
             layout="@layout/error_state"
+            app:viewModel="@{viewModel.errorViewModel}"
             app:rootVisibility="@{viewModel.errorVisibility}" />
 
         <include

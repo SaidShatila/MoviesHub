@@ -11,7 +11,7 @@ data class CompactMoviesViewModel(
     val onClick: (CompactMovie) -> Unit
 ) : ViewModel() {
 
-    val releaseDateString = movie.releaseDate.toString()
+    val releaseDateString = movie.releaseDate
     val imagePoster = POSTER_BASE_URL + movie.posterPath
 
     fun onMovieClicked(){

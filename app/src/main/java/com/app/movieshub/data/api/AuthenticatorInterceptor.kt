@@ -20,6 +20,5 @@ val requestInterceptor = Interceptor { chain ->
         .newBuilder()
         .url(url)
         .build()
-
     return@Interceptor chain.proceed(request)
 }
