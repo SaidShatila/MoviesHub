@@ -27,7 +27,8 @@ class MoviesListFragment : Fragment() {
                 requireActivity().supportFragmentManager.commit {
                     replace(
                         R.id.fragmentContainer,
-                        MovieDetailsFragment().apply { arguments = Bundle() })
+                        MovieDetailsFragment.createInstance(movie.id.toString())
+                    )
                 }
             }
         )
