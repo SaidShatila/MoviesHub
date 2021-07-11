@@ -22,5 +22,9 @@
         <include
             layout="@layout/error_state"
             app:rootVisibility="@{viewModel.errorVisibility}" />
+
+        <include
+            layout="@layout/loading_state"
+            app:rootVisibility="@{viewModel.loadingVisibility}" />
     </FrameLayout>
 </layout>

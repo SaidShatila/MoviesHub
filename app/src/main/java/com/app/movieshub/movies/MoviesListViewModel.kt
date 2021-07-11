@@ -1,6 +1,5 @@
 package com.app.movieshub.movies
 
-import android.util.Log
 import android.view.View
 import androidx.databinding.ObservableField
 import androidx.databinding.ObservableInt
@@ -21,6 +20,7 @@ data class MoviesListViewModel(
 ) : ViewModel() {
     val contentVisibility = ObservableInt(View.GONE)
     val errorVisibility = ObservableInt(View.GONE)
+    val loadingVisibility = ObservableInt(View.GONE)
     val contentViewModel = ObservableField<MoviesListStateViewModel.Content>()
     val errorViewModel = ObservableField<MoviesListStateViewModel.Error>()
 
@@ -30,19 +30,22 @@ data class MoviesListViewModel(
             is MoviesListStateViewModel.Content -> {
                 contentVisibility.set(View.VISIBLE)
                 errorVisibility.set(View.GONE)
+                loadingVisibility.set(View.GONE)
                 contentViewModel.set(newValue)
             }
             is MoviesListStateViewModel.Error -> {
                 contentVisibility.set(View.GONE)
                 errorVisibility.set(View.VISIBLE)
+                loadingVisibility.set(View.GONE)
                 errorViewModel.set(newValue)
             }
             MoviesListStateViewModel.Loading -> {
                 contentVisibility.set(View.GONE)
                 errorVisibility.set(View.GONE)
+                loadingVisibility.set(View.VISIBLE)
             }
         }
-        Log.e("Said","$state errorVisibility: ${errorVisibility.get() == View.VISIBLE}, contentVisibility: ${contentVisibility.get()==View.VISIBLE}")
+//        Log.e("Said","$state errorVisibility: ${errorVisibility.get() == View.VISIBLE}, contentVisibility: ${contentVisibility.get()==View.VISIBLE}")
     }
 
     init {

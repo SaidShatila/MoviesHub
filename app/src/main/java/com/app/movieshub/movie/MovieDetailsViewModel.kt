@@ -21,22 +21,26 @@ data class MovieDetailsViewModel(
     val errorVisibility = ObservableInt(View.GONE)
     val contentViewModel = ObservableField<MovieDetailsStateViewModel.Content>()
     val errorViewModel = ObservableField<MovieDetailsStateViewModel.Error>()
+    val loadingVisibility = ObservableInt(View.GONE)
 
     private var state: MovieDetailsStateViewModel by Delegates.observable(MovieDetailsStateViewModel.Loading) { _, oldValue, newValue ->
         when (newValue) {
             is MovieDetailsStateViewModel.Content -> {
                 contentVisibility.set(View.VISIBLE)
                 errorVisibility.set(View.INVISIBLE)
+                loadingVisibility.set(View.GONE)
                 contentViewModel.set(newValue)
             }
             is MovieDetailsStateViewModel.Error -> {
                 contentVisibility.set(View.GONE)
                 errorVisibility.set(View.VISIBLE)
+                loadingVisibility.set(View.GONE)
                 errorViewModel.set(newValue)
             }
             MovieDetailsStateViewModel.Loading -> {
                 contentVisibility.set(View.GONE)
                 errorVisibility.set(View.GONE)
+                loadingVisibility.set(View.VISIBLE)
             }
         }
     }
