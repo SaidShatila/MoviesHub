@@ -26,7 +26,7 @@ data class MovieDetailsViewModel(
         when (newValue) {
             is MovieDetailsStateViewModel.Content -> {
                 contentVisibility.set(View.VISIBLE)
-                errorVisibility.set(View.GONE)
+                errorVisibility.set(View.INVISIBLE)
                 contentViewModel.set(newValue)
             }
             is MovieDetailsStateViewModel.Error -> {

@@ -8,13 +8,22 @@
         <variable
             name="viewModel"
             type="com.app.movieshub.movies.MoviesListViewModel.MoviesListStateViewModel.Content" />
+        <variable
+            name="rootVisibility"
+            type="Integer" />
     </data>
 
-    <androidx.recyclerview.widget.RecyclerView
+    <FrameLayout
+        android:visibility="@{rootVisibility}"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:adapter="@{viewModel.adapter}"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:adapter="@{viewModel.adapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </FrameLayout>
 
 
 </layout>
