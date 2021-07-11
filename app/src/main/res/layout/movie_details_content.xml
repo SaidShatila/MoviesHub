@@ -14,15 +14,19 @@
     <ScrollView
         android:visibility="@{rootVisibility}"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:background="@color/black">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/black">
 
 
             <ImageView
+                android:scaleType="fitCenter"
+                android:layout_gravity="center_horizontal"
                 android:id="@+id/moviePoster"
                 android:layout_width="wrap_content"
                 android:layout_height="400dp"
@@ -36,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="movie"
+                android:text="Movie: "
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -59,7 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="sub title"
+                android:text="Sub Title:"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -82,7 +86,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Movie Info"
+                android:text="Movie Info: "
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -224,7 +228,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Overview "
+                android:text="Overview: "
                 android:textColor="@color/white"
                 android:textSize="12sp"
                 android:textStyle="bold"
@@ -241,6 +245,6 @@
                 app:layout_constraintBottom_toBottomOf="@id/overView"
                 app:layout_constraintStart_toEndOf="@id/overView"
                 app:layout_constraintTop_toTopOf="@id/overView" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
     </ScrollView>
 </layout>
