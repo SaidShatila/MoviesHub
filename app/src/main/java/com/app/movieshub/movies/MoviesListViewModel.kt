@@ -1,5 +1,6 @@
 package com.app.movieshub.movies
 
+import android.util.Log
 import android.view.View
 import androidx.databinding.ObservableField
 import androidx.databinding.ObservableInt
@@ -25,6 +26,7 @@ data class MoviesListViewModel(
 
     private var state: MoviesListStateViewModel by Delegates.observable(MoviesListStateViewModel.Loading) { _, oldValue, newValue ->
         when (newValue) {
+
             is MoviesListStateViewModel.Content -> {
                 contentVisibility.set(View.VISIBLE)
                 errorVisibility.set(View.GONE)
@@ -40,6 +42,7 @@ data class MoviesListViewModel(
                 errorVisibility.set(View.GONE)
             }
         }
+        Log.e("Said","$state errorVisibility: ${errorVisibility.get() == View.VISIBLE}, contentVisibility: ${contentVisibility.get()==View.VISIBLE}")
     }
 
     init {

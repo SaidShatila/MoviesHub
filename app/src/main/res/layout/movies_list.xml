@@ -21,7 +21,7 @@
 
         <include
             layout="@layout/error_state"
-            android:visibility="@{viewModel.errorVisibility}"
+            android:visibility="gone"
             app:viewModel="@{viewModel.errorViewModel}" />
     </FrameLayout>
 </layout>
