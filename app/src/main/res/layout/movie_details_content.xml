@@ -3,20 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="rootVisibility"
+            type="Integer" />
         <variable
             name="viewModel"
             type="com.app.movieshub.movie.MovieDetailsStateViewModel.Content" />
     </data>
 
     <ScrollView
+        android:visibility="@{rootVisibility}"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="8dp"
             android:background="@color/black">
 
 

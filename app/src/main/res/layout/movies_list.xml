@@ -16,12 +16,11 @@
 
         <include
             layout="@layout/movies_list_content"
-            android:visibility="@{viewModel.contentVisibility}"
+            app:rootVisibility="@{viewModel.contentVisibility}"
             app:viewModel="@{viewModel.contentViewModel}" />
 
         <include
             layout="@layout/error_state"
-            android:visibility="gone"
-            app:viewModel="@{viewModel.errorViewModel}" />
+            app:rootVisibility="@{viewModel.errorVisibility}" />
     </FrameLayout>
 </layout>

@@ -8,9 +8,13 @@
         <variable
             name="viewModel"
             type="com.app.movieshub.movies.MoviesListViewModel.MoviesListStateViewModel.Content" />
+        <variable
+            name="rootVisibility"
+            type="Integer" />
     </data>
 
     <FrameLayout
+        android:visibility="@{rootVisibility}"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
