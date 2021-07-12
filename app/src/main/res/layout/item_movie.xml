@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.app.movieshub.movies.CompactMoviesViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/black"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> viewModel.onMovieClicked()}">
+
+        <ImageView
+            android:id="@+id/moviePosterMainPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="300dp"
+            android:minHeight="150dp"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:scaleType="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:loadImage="@{viewModel.imagePoster}">
+
+        </ImageView>
+
+
+        <TextView
+            android:id="@+id/movieTitleViewModelMainPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="4dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{viewModel.movie.title}"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/moviePosterMainPage" />
+
+        <TextView
+            android:id="@+id/movieReleaseDateViewModelMainPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@{viewModel.releaseDateString}"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/movieTitleViewModelMainPage"
+            app:layout_constraintStart_toEndOf="@id/movieTitleViewModelMainPage"
+            app:layout_constraintTop_toTopOf="@id/movieTitleViewModelMainPage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

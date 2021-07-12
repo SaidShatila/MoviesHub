@@ -1,4 +1,4 @@
-package com.app.minimvvmproject
+package com.app.movieshub
 
 import org.junit.Test
 
