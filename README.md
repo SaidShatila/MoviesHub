@@ -1,3 +1,4 @@
+
 # MoviesHub
 # This sample was created to showcase my skills and the latest learnings in the Android Framework.
 # To be able to compile this project, you need to add the following in your global gradle properties file:
@@ -30,3 +31,4 @@ Also I will try to add the link of the movie so you can download it.
 # GIF
 Here is a gif demonstrating this super mini app.
 
+https://user-images.githubusercontent.com/57522137/125275907-428a1d00-e318-11eb-8864-e9d0e93569ed.mp4
