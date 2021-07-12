@@ -1,4 +1,3 @@
-
 # MoviesHub
 # This sample was created to showcase my skills and the latest learnings in the Android Framework.
 # To be able to compile this project, you need to add the following in your global gradle properties file:
@@ -28,7 +27,8 @@ Repository is the single source of truth that is used to fetch data(either from 
 In addition I will add Anime Tv Series and even include a search bar, improve the UI Design of the app maybe even add some features like bookmark this movie.
 Also I will try to add the link of the movie so you can download it.
 
-# GIF
-Here is a gif demonstrating this super mini app.
+# Video
+Here is a small video demonstrating this super mini app.
 
-https://user-images.githubusercontent.com/57522137/125275907-428a1d00-e318-11eb-8864-e9d0e93569ed.mp4
+https://user-images.githubusercontent.com/57522137/125276103-7cf3ba00-e318-11eb-9ca9-512ba8d80087.mp4
+
