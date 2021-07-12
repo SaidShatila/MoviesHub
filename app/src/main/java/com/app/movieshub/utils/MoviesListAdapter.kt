@@ -3,9 +3,8 @@ package com.app.movieshub.utils
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.app.minimvvmproject.databinding.ItemMovieBinding
+import com.app.movieshub.databinding.ItemMovieBinding
 import com.app.movieshub.data.entities.CompactMovie
-import com.app.movieshub.data.entities.Movie
 import com.app.movieshub.movies.CompactMoviesViewModel
 
 class MoviesListAdapter(

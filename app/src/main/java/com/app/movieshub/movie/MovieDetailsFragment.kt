@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.app.minimvvmproject.databinding.MovieDetailsBinding
+import com.app.movieshub.databinding.MovieDetailsBinding
 import com.app.movieshub.DummyDependencyProvider
 
 private const val KEY_MOVIE_ID = "movieId"

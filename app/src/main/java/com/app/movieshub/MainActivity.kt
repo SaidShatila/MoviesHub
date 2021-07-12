@@ -3,7 +3,6 @@ package com.app.movieshub
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
-import com.app.minimvvmproject.R
 import com.app.movieshub.movies.MoviesListFragment
 
 
