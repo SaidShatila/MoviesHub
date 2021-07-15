@@ -8,8 +8,5 @@ data class ErrorViewModel(
 
 ) : ViewModel(
 
-) {
-
-
-}
+)
 

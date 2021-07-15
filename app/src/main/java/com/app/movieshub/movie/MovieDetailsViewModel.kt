@@ -86,5 +86,6 @@ sealed class MovieDetailsStateViewModel {
         val budgetString = movie.budget.toString()
         val moviePosterPath = POSTER_BASE_URL + movie.posterPath
     }
+
     object Loading : MovieDetailsStateViewModel()
 }

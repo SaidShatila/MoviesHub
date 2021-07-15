@@ -32,7 +32,7 @@ class MovieRepository(private val movieService: MovieService) {
                 Result.failure(Throwable())
             }
             return result
-        }catch (e:Exception){
+        } catch (e: Exception) {
             return Result.failure(e)
         }
     }

@@ -13,9 +13,9 @@ interface MovieService {
     //https://api.themoviedb.org/3/
 
     @GET("movie/{movie_id}")
-   suspend fun getMovieDetails(@Path("movie_id") id: String): Response<Movie>
+    suspend fun getMovieDetails(@Path("movie_id") id: String): Response<Movie>
 
     @GET("movie/popular")
-    suspend fun getMovies(@Query("page")page: Int): Response<MoviesResponse>
+    suspend fun getMovies(@Query("page") page: Int): Response<MoviesResponse>
 
 }
