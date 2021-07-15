@@ -11,4 +11,4 @@ data class CompactMovie(
     @SerialName("release_date") val releaseDate: String,
     @SerialName("title") val title: String,
 
-)
+    )

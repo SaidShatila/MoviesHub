@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
+import com.app.movieshub.DummyDependencyProvider
 import com.app.movieshub.R
 import com.app.movieshub.databinding.MoviesListBinding
-import com.app.movieshub.DummyDependencyProvider
 import com.app.movieshub.movie.MovieDetailsFragment
 
 class MoviesListFragment : Fragment() {
