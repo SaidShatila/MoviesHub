@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.app.movieshub.databinding.MovieDetailsBinding
 import com.app.movieshub.DummyDependencyProvider
+import com.app.movieshub.databinding.MovieDetailsBinding
 
 private const val KEY_MOVIE_ID = "movieId"
 
@@ -17,7 +17,8 @@ class MovieDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val movieId: String =
-            arguments?.getString(KEY_MOVIE_ID) ?: throw IllegalArgumentException("Movie id is missing")
+            arguments?.getString(KEY_MOVIE_ID)
+                ?: throw IllegalArgumentException("Movie id is missing")
         val binding = MovieDetailsBinding.inflate(inflater, container, false)
         binding.viewModel = MovieDetailsViewModel(
             movieRepository = DummyDependencyProvider.movieRepository,
